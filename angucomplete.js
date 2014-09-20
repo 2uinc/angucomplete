@@ -12,6 +12,7 @@ angular.module('angucomplete', [] )
             "id": "@id",
             "placeholder": "@placeholder",
             "selectedObject": "=selectedobject",
+            "initialValue": '@initialvalue',
             "url": "@url",
             "dataField": "@datafield",
             "titleField": "@titlefield",
@@ -36,7 +37,10 @@ angular.module('angucomplete', [] )
             $scope.searching = false;
             $scope.pause = 500;
             $scope.minLength = 3;
-            $scope.searchStr = null;
+            $scope.searchStr = $scope.initialValue;
+            $scope.$watch('initialValue', function(){
+                $scope.searchStr = $scope.initialValue;
+            });
 
             if ($scope.minLengthUser && $scope.minLengthUser != "") {
                 $scope.minLength = $scope.minLengthUser;
