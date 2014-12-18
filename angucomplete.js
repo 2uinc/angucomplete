@@ -17,6 +17,7 @@ angular.module('angucomplete', [] )
             "url": "@url",
             "dataField": "@datafield",
             "titleField": "@titlefield",
+            "typeField": "@typefield",
             "descriptionField": "@descriptionfield",
             "imageField": "@imagefield",
             "imageUri": "@imageuri",
@@ -77,6 +78,11 @@ angular.module('angucomplete', [] )
                             description = responseData[i][$scope.descriptionField];
                         }
 
+                        var type = "";
+                        if ($scope.typeField) {
+                            type = responseData[i][$scope.typeField];
+                        }
+
                         var imageUri = "";
                         if ($scope.imageUri) {
                             imageUri = $scope.imageUri;
@@ -97,6 +103,7 @@ angular.module('angucomplete', [] )
                         var resultRow = {
                             title: text,
                             description: description,
+                            type: type,
                             image: image,
                             originalObject: responseData[i]
                         }
