@@ -40,7 +40,7 @@
 .angucomplete-label {
     font-size: 12px;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .angucomplete-title {
@@ -48,10 +48,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    margin-bottom: 5px;
 }
 
 .angucomplete-description {
-    font-size: 14px;
+    font-size: 12px;
     color: #999;
 }
 
