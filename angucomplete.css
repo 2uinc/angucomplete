@@ -37,8 +37,19 @@
     font-size: 14px;
 }
 
+.angucomplete-label {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.angucomplete-title {
+    font-size: 16px;
+}
+
 .angucomplete-description {
     font-size: 14px;
+    color: #999;
 }
 
 .angucomplete-row {
