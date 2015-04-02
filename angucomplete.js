@@ -196,6 +196,12 @@ angular.module('angucomplete', [] )
                 }
             }
 
+            $scope.keyPressedDown = function(e) {
+                if(e.which == 13) {
+                    e.preventDefault()
+                }
+            }
+
             $scope.selectResult = function(result) {
                 if ($scope.matchClass) {
                     result.title = result.title.toString().replace(/(<([^>]+)>)/ig, '');
@@ -210,19 +216,26 @@ angular.module('angucomplete', [] )
             var inputField = elem.find('input');
 
             inputField.on('keyup', $scope.keyPressed);
+            inputField.on('keydown', $scope.keyPressedDown);
 
             elem.on("keyup", function (event) {
                 if(event.which === 40) {
                     if ($scope.results && ($scope.currentIndex + 1) < $scope.results.length) {
                         $scope.currentIndex ++;
+                        // $(inputField).attr('aria-label', $scope.results[$scope.currentIndex].title)
+                        // updating aria-label of #invitee_field not being announced.. but getting closer to
+                        // angucomplete accessibility
                         $scope.$apply();
                         event.preventDefault();
                         event.stopPropagation();
                     }
 
                     $scope.$apply();
-                } else if(event.which == 38) {
+                } else if(event.which == 38) {x
                     if ($scope.currentIndex >= 1) {
+                        // $(inputField).attr('aria-label', $scope.results[$scope.currentIndex].title)
+                        // updating aria-label of #invitee_field not being announced.. but getting closer to
+                        // angucomplete accessibility
                         $scope.currentIndex --;
                         $scope.$apply();
                         event.preventDefault();
