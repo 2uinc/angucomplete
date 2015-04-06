@@ -231,7 +231,7 @@ angular.module('angucomplete', [] )
                     }
 
                     $scope.$apply();
-                } else if(event.which == 38) {x
+                } else if(event.which == 38) {
                     if ($scope.currentIndex >= 1) {
                         // $(inputField).attr('aria-label', $scope.results[$scope.currentIndex].title)
                         // updating aria-label of #invitee_field not being announced.. but getting closer to
